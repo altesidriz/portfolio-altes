@@ -11,10 +11,10 @@ const AboutPage = () => {
 
   const skillRef = useRef();
   // const isSkillRefInView = useInView(skillRef, {once:true});
-  const isSkillRefInView = useInView(skillRef, { margin: "-100px" });
+  const isSkillRefInView = useInView(skillRef, { once: true }, { margin: "-100px" });
 
   const experienceRef = useRef();
-  const isExperienceRefInView = useInView(experienceRef, { margin: "-100px" });
+  const isExperienceRefInView = useInView(experienceRef, {once: true}, { margin: "-100px" });
 
   return (
     <motion.div
@@ -26,31 +26,28 @@ const AboutPage = () => {
       {/* CONTAINER */}
       <div className="h-full overflow-scroll lg:flex" ref={containerRef}>
         {/* TEXT CONTAINER */}
-        <div className="p-4 sm:p-8 md:p-12 lg:p-20 xl:p-48 flex flex-col gap-24 md:gap-32 lg:gap-48 xl:gap-64 lg:w-2/3 lg:pr-0 xl:w-1/2">
+        <div className="p-4 sm:p-8 md:p-12 lg:p-20 xl:p-48 flex flex-col gap-24 md:gap-32 lg:gap-48 xl:gap-64 w-full lg:pr-0">
           {/* BIOGRAPHY CONTAINER */}
           <div className="flex flex-col gap-12 justify-center">
             {/* BIOGRAPHY IMAGE */}
             <Image
-              src="https://images.pexels.com/photos/775358/pexels-photo-775358.jpeg?auto=compress&cs=tinysrgb&w=800"
+              src="/photo.jpg"
               alt=""
-              width={112}
-              height={112}
+              width={150}
+              height={150}
               className="w-28 h-28 rounded-full object-cover"
             />
             {/* BIOGRAPHY TITLE */}
             <h1 className="font-bold text-2xl">BIOGRAPHY</h1>
             {/* BIOGRAPHY DESC */}
             <p className="text-lg">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum
-              harum quibusdam cupiditate nobis accusamus sed aut aperiam,
-              reiciendis numquam! Voluptas voluptatibus obcaecati dolore itaque
-              suscipit! Vel doloremque numquam quam nihil.
+              I was born in Bulgaria and began my academic journey at UACEG University in Sofia, where I studied civil engineering from 2008 to 2015. In 2019, I decided to pivot towards the tech world and started studying coding at PU-Plovdiv. However, I took a break from my studies there to focus on mastering JavaScript more quickly at SoftUni Sofia, where I graduated as a full-stack developer with skills in JavaScript, React, MongoDB, and Node.js. I’m still continuing my education at PU-Plovdiv
             </p>
             {/* BIOGRAPHY QUOTE */}
             <span className="italic">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Outside of my professional interests, I love staying active. In the summers, I spend a lot of time swimming, and in the autumns, I enjoy hiking. I also like to unwind with some gaming whenever I get the chance.
             </span>
-            {/* BIOGRAPHY SIGN SVG*/}
+            {/* BIOGRAPHY SIGN SVG
             <div className="self-end">
               <svg
                 width="185"
@@ -65,7 +62,7 @@ const AboutPage = () => {
                   strokeWidth="2"
                 />
               </svg>
-            </div>
+            </div> */}
             {/* BIOGRAPHY SCROLL SVG */}
             <motion.svg
               initial={{ opacity: 0.2, y: 0 }}
@@ -107,13 +104,16 @@ const AboutPage = () => {
               animate={isSkillRefInView ? { x: 0 } : {}}
               className="flex gap-4 flex-wrap"
             >
-              <div className="rounded  p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black">
+              <div className="rounded flex p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black">
+                <Image src="/techlogos/js.png" alt="" width={24} height={24} />
                 JavaScript
               </div>
-              <div className="rounded  p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black">
+              <div className="rounded  flex p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black">
+                <Image src="/techlogos/ts.png" alt="" width={24} height={24} />
                 TypeScript
               </div>
-              <div className="rounded  p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black">
+              <div className="rounded flex p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black">
+                <Image src="/techlogos/react.png" alt="" width={24} height={24} />
                 React.js
               </div>
               <div className="rounded  p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black">
@@ -214,7 +214,7 @@ const AboutPage = () => {
           >
             {/* EXPERIENCE TITLE */}
             <motion.h1
-              initial={{ x: "-300px" }}
+              initial={{ x: "-100vw" }}
               animate={isExperienceRefInView ? { x: "0" } : {}}
               transition={{ delay: 0.2 }}
               className="font-bold text-2xl"
@@ -326,9 +326,9 @@ const AboutPage = () => {
           </div>
         </div>
         {/* SVG CONTAINER */}
-        <div className="hidden lg:block w-1/3 sticky top-0 z-30 xl:w-1/2">
+        {/* <div className="hidden lg:block w-1/3 sticky top-0 z-30 xl:w-1/2">
           <Brain scrollYProgress={scrollYProgress} />
-        </div>
+        </div> */}
       </div>
     </motion.div>
   );
