@@ -25,7 +25,7 @@ const Homepage = () => {
           </h1>
           {/* DESC */}
           <p className="md:text-lg">
-            Welcome to my portfolio page! I'm a full-stack developer with a passion for creating efficient and dynamic web applications. Here, you'll find a showcase of the projects I've worked on, each highlighting my skills in JavaScript, React, MongoDB, Node.js and many more.
+            Welcome to my portfolio page! I&apos;m a full-stack developer with a passion for creating efficient and dynamic web applications. Here, you&apos;ll find a showcase of the projects I&apos;ve worked on, each highlighting my skills in JavaScript, React, MongoDB, Node.js and many more.
           </p>
           <p className="md:text-lg">
             I hope my work gives you a glimpse into my capabilities, and I look forward to the opportunity to collaborate on future projects!
