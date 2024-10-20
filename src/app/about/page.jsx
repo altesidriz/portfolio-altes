@@ -1,5 +1,4 @@
 "use client";
-import Brain from "@/components/brain";
 import { motion, useInView, useScroll } from "framer-motion";
 import Image from "next/image";
 import { useRef } from "react";
@@ -14,7 +13,7 @@ const AboutPage = () => {
   const isSkillRefInView = useInView(skillRef, { once: true }, { margin: "-100px" });
 
   const experienceRef = useRef();
-  const isExperienceRefInView = useInView(experienceRef, {once: true}, { margin: "-100px" });
+  const isExperienceRefInView = useInView(experienceRef, { once: true }, { margin: "-100px" });
 
   return (
     <motion.div
@@ -73,6 +72,7 @@ const AboutPage = () => {
               xmlns="http://www.w3.org/2000/svg"
               width={50}
               height={50}
+              className="hidden lg:block"
             >
               <path
                 d="M5 15C5 16.8565 5.73754 18.6371 7.05029 19.9498C8.36305 21.2626 10.1435 21.9999 12 21.9999C13.8565 21.9999 15.637 21.2626 16.9498 19.9498C18.2625 18.6371 19 16.8565 19 15V9C19 7.14348 18.2625 5.36305 16.9498 4.05029C15.637 2.73754 13.8565 2 12 2C10.1435 2 8.36305 2.73754 7.05029 4.05029C5.73754 5.36305 5 7.14348 5 9V15Z"
@@ -105,15 +105,12 @@ const AboutPage = () => {
               className="flex gap-4 flex-wrap"
             >
               <div className="rounded flex p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black">
-                <Image src="/techlogos/js.png" alt="" width={24} height={24} />
                 JavaScript
               </div>
               <div className="rounded  flex p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black">
-                <Image src="/techlogos/ts.png" alt="" width={24} height={24} />
                 TypeScript
               </div>
               <div className="rounded flex p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black">
-                <Image src="/techlogos/react.png" alt="" width={24} height={24} />
                 React.js
               </div>
               <div className="rounded  p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black">
@@ -193,6 +190,7 @@ const AboutPage = () => {
               xmlns="http://www.w3.org/2000/svg"
               width={50}
               height={50}
+              className="hidden lg:block"
             >
               <path
                 d="M5 15C5 16.8565 5.73754 18.6371 7.05029 19.9498C8.36305 21.2626 10.1435 21.9999 12 21.9999C13.8565 21.9999 15.637 21.2626 16.9498 19.9498C18.2625 18.6371 19 16.8565 19 15V9C19 7.14348 18.2625 5.36305 16.9498 4.05029C15.637 2.73754 13.8565 2 12 2C10.1435 2 8.36305 2.73754 7.05029 4.05029C5.73754 5.36305 5 7.14348 5 9V15Z"
@@ -209,7 +207,7 @@ const AboutPage = () => {
           </div>
           {/* EXPERIENCE CONTAINER */}
           <div
-            className="flex flex-col gap-12 justify-center pb-48"
+            className="hidden lg:flex flex-col gap-12 justify-center pb-48"
             ref={experienceRef}
           >
             {/* EXPERIENCE TITLE */}
@@ -233,20 +231,19 @@ const AboutPage = () => {
                 <div className="w-1/3 ">
                   {/* JOB TITLE */}
                   <div className="bg-white p-3 font-semibold rounded-b-lg rounded-s-lg">
-                    Senior JavaScript Engineer
+                    Full-Stack Developer
                   </div>
                   {/* JOB DESC */}
                   <div className="p-3 text-sm italic">
-                    I led web development, offering expertise in JavaScript
-                    frameworks.{" "}
+                    Experienced in building dynamic web applications with React and Next.js on the frontend. Backend expertise in Node.js and Express, with a focus on creating scalable APIs. Proficient in both relational (MySQL, PostgreSQL) and non-relational databases (MongoDB). State management using Redux, data fetching with React Query. Familiar with testing tools (Jest, Cypress) and version control (Git).{" "}
                   </div>
                   {/* JOB DATE */}
                   <div className="p-3 text-red-400 text-sm font-semibold">
-                    2024 - Present
+                    Present
                   </div>
                   {/* JOB COMPANY */}
                   <div className="p-1 rounded bg-white text-sm font-semibold w-fit">
-                    Apple
+                    Software University - Sofia
                   </div>
                 </div>
                 {/* CENTER */}
@@ -276,20 +273,19 @@ const AboutPage = () => {
                 <div className="w-1/3 ">
                   {/* JOB TITLE */}
                   <div className="bg-white p-3 font-semibold rounded-b-lg rounded-s-lg">
-                    Senior React Developer
+                    React JS
                   </div>
                   {/* JOB DESC */}
                   <div className="p-3 text-sm italic">
-                    I spearheaded React-based application development,
-                    leveraging advanced skills.{" "}
+                    Developing Single Page Applications using ReactJS technology. Writing with JSX syntax, handling requests and Promises,routing, form validation,styling components using techniques like CSS Modules and Styled Components. React Hooks, Context API.Unit testing withJEST{" "}
                   </div>
                   {/* JOB DATE */}
                   <div className="p-3 text-red-400 text-sm font-semibold">
-                    2019 - 2024{" "}
+                    2021 - 2022{" "}
                   </div>
                   {/* JOB COMPANY */}
                   <div className="p-1 rounded bg-white text-sm font-semibold w-fit">
-                    Microsoft
+                    Software University - Sofia
                   </div>
                 </div>
               </div>
@@ -299,16 +295,19 @@ const AboutPage = () => {
                 <div className="w-1/3 ">
                   {/* JOB TITLE */}
                   <div className="bg-white p-3 font-semibold rounded-b-lg rounded-s-lg">
-                    Freelancer{" "}
+                    Javascript Back End
                   </div>
                   {/* JOB DESC */}
                   <div className="p-3 text-sm italic">
-                    I provided web solutions, applying a range of technologies
-                    to address client requirements.{" "}
+                    The development of server-side JavaScript applications on the Node.js platform, using Express.js as a framework. Server-client architecture and data-driven web applications with Node.js, Express.js, and MongoDB. Working with MongoDB-Mongoose library. Building REST APIs using Express.js and MongoDB.{" "}
                   </div>
                   {/* JOB DATE */}
                   <div className="p-3 text-red-400 text-sm font-semibold">
-                    2010 - 2019{" "}
+                    2021 - 2022
+                  </div>
+                  {/* JOB COMPANY */}
+                  <div className="p-1 rounded bg-white text-sm font-semibold w-fit">
+                    Software Univaerist - Sofia
                   </div>
                 </div>
                 {/* CENTER */}
@@ -321,8 +320,364 @@ const AboutPage = () => {
                 </div>
                 {/* RIGHT */}
                 <div className="w-1/3 "></div>
+              </div>
+              {/* EXPERIENCE LIST ITEM */}
+              <div className="flex justify-between h-48">
+                {/* LEFT */}
+                <div className="w-1/3 "></div>
+                {/* CENTER */}
+                <div className="w-1/6 flex justify-center">
+                  {/* LINE */}
+                  <div className="w-1 h-full bg-gray-600 rounded relative">
+                    {/* LINE CIRCLE */}
+                    <div className="absolute w-5 h-5 rounded-full ring-4 ring-red-400 bg-white -left-2"></div>
+                  </div>
+                </div>
+                {/* RIGHT */}
+                <div className="w-1/3 ">
+                  {/* JOB TITLE */}
+                  <div className="bg-white p-3 font-semibold rounded-b-lg rounded-s-lg">
+                    HTML and CSS
+                  </div>
+                  {/* JOB DESC */}
+                  <div className="p-3 text-sm italic">
+                    Knowledge of HTML5 and CSS3 for web development, web browsers, tools for HTML/CSS/DOM development, and practical skills in using the language for describing web content (HTML) and the language for styling web content (CSS).{" "}
+                  </div>
+                  {/* JOB DATE */}
+                  <div className="p-3 text-red-400 text-sm font-semibold">
+                    2020 - 2021{" "}
+                  </div>
+                  {/* JOB COMPANY */}
+                  <div className="p-1 rounded bg-white text-sm font-semibold w-fit">
+                    Software University - Sofia
+                  </div>
+                </div>
+              </div>
+              {/* EXPERIENCE LIST ITEM */}
+              <div className="flex justify-between h-48">
+                {/* LEFT */}
+                <div className="w-1/3 ">
+                  {/* JOB TITLE */}
+                  <div className="bg-white p-3 font-semibold rounded-b-lg rounded-s-lg">
+                    Javascript Applications{" "}
+                  </div>
+                  {/* JOB DESC */}
+                  <div className="p-3 text-sm italic">
+                    HTTP requests, REST services, Backend as a Service (BaaS), asynchronous code (Promises, use of async/await), templating, and routing. Creating a Single Page Application.{" "}
+                  </div>
+                  {/* JOB DATE */}
+                  <div className="p-3 text-red-400 text-sm font-semibold">
+                    2020 - 2021
+                  </div>
+                  {/* JOB COMPANY */}
+                  <div className="p-1 rounded bg-white text-sm font-semibold w-fit">
+                    Software University - Sofia
+                  </div>{" "}
+                </div>
+                {/* CENTER */}
+                <div className="w-1/6 flex justify-center">
+                  {/* LINE */}
+                  <div className="w-1 h-full bg-gray-600 rounded relative">
+                    {/* LINE CIRCLE */}
+                    <div className="absolute w-5 h-5 rounded-full ring-4 ring-red-400 bg-white -left-2"></div>
+                  </div>
+                </div>
+                {/* RIGHT */}
+                <div className="w-1/3 "></div>
+              </div>
+              {/* EXPERIENCE LIST ITEM */}
+              <div className="flex justify-between h-48">
+                {/* LEFT */}
+                <div className="w-1/3 "></div>
+                {/* CENTER */}
+                <div className="w-1/6 flex justify-center">
+                  {/* LINE */}
+                  <div className="w-1 h-full bg-gray-600 rounded relative">
+                    {/* LINE CIRCLE */}
+                    <div className="absolute w-5 h-5 rounded-full ring-4 ring-red-400 bg-white -left-2"></div>
+                  </div>
+                </div>
+                {/* RIGHT */}
+                <div className="w-1/3 ">
+                  {/* JOB TITLE */}
+                  <div className="bg-white p-3 font-semibold rounded-b-lg rounded-s-lg">
+                    JavaScript Advanced
+                  </div>
+                  {/* JOB DESC */}
+                  <div className="p-3 text-sm italic">
+                    Working with the DOM tree, manipulations on it, and handling events. Functional and Object-Oriented Programming (OOP) approaches in JavaScript, inheritance, object composition, prototype chains and etc.{" "}
+                  </div>
+                  {/* JOB DATE */}
+                  <div className="p-3 text-red-400 text-sm font-semibold">
+                    2020 - 2021{" "}
+                  </div>
+                  {/* JOB COMPANY */}
+                  <div className="p-1 rounded bg-white text-sm font-semibold w-fit">
+                    Software University - Sofia
+                  </div>
+                </div>
+              </div>
+              {/* EXPERIENCE LIST ITEM */}
+              <div className="flex justify-between h-48">
+                {/* LEFT */}
+                <div className="w-1/3 ">
+                  {/* JOB TITLE */}
+                  <div className="bg-white p-3 font-semibold rounded-b-lg rounded-s-lg">
+                    C# Basics and Web Design
+                  </div>
+                  {/* JOB DESC */}
+                  <div className="p-3 text-sm italic">
+                    Starting my education in PU-Plovdiv and building basic knowledge about C#, further studiing about OOP programing.{" "}
+                  </div>
+                  {/* JOB DATE */}
+                  <div className="p-3 text-red-400 text-sm font-semibold">
+                    2019 - 2020
+                  </div>
+                  {/* JOB COMPANY */}
+                  <div className="p-1 rounded bg-white text-sm font-semibold w-fit">
+                    PU-Plovdiv
+                  </div>
+                </div>
+                {/* CENTER */}
+                <div className="w-1/6 flex justify-center">
+                  {/* LINE */}
+                  <div className="w-1 h-full bg-gray-600 rounded relative">
+                    {/* LINE CIRCLE */}
+                    <div className="absolute w-5 h-5 rounded-full ring-4 ring-red-400 bg-white -left-2"></div>
+                  </div>
+                </div>
+                {/* RIGHT */}
+                <div className="w-1/3 "></div>
+              </div>
+              {/* EXPERIENCE LIST ITEM */}
+              <div className="flex justify-between h-48">
+                {/* LEFT */}
+                <div className="w-1/3 "></div>
+                {/* CENTER */}
+                <div className="w-1/6 flex justify-center">
+                  {/* LINE */}
+                  <div className="w-1 h-full bg-gray-600 rounded relative">
+                    {/* LINE CIRCLE */}
+                    <div className="absolute w-5 h-5 rounded-full ring-4 ring-red-400 bg-white -left-2"></div>
+                  </div>
+                </div>
+                {/* RIGHT */}
+                <div className="w-1/3 ">
+                  {/* JOB TITLE */}
+                  <div className="bg-white p-3 font-semibold rounded-b-lg rounded-s-lg">
+                    Java Basics
+                  </div>
+                  {/* JOB DESC */}
+                  <div className="p-3 text-sm italic">
+                    Programing basics and algorythms with Java.{" "}
+                  </div>
+                  {/* JOB DATE */}
+                  <div className="p-3 text-red-400 text-sm font-semibold">
+                    2019{" "}
+                  </div>
+                  {/* JOB COMPANY */}
+                  <div className="p-1 rounded bg-white text-sm font-semibold w-fit">
+                    Software University - Sofia
+                  </div>
+                </div>
               </div>
             </motion.div>
+          </div>
+        </div>
+
+        {/* RESPONSIVE LIST */}
+        <div className="p-4 flex flex-col gap-4 justify-center lg:hidden" ref={experienceRef}>
+          <motion.h1
+            initial={{ x: "-100vw" }}
+            animate={isExperienceRefInView ? { x: "0" } : {}}
+            transition={{ delay: 0.4 }}
+            className="font-bold text-2xl"
+            >
+            EXPERIENCE
+          </motion.h1>
+          {/* LIST ITEM */}
+          <motion.div className="w-full "
+          initial={{ x: "-300px" }}
+          animate={isExperienceRefInView ? { x: "0" } : {}}
+          transition={{ delay: 0.2 }}
+          >
+            {/* JOB TITLE */}
+            <div className="bg-white p-3 font-semibold rounded-b-lg rounded-s-lg">
+              Full Stack Developer
+            </div>
+            {/* JOB DESC */}
+            <div className="p-3 text-sm italic">
+              Experienced in building dynamic web applications with React and Next.js on the frontend. Backend expertise in Node.js and Express, with a focus on creating scalable APIs. Proficient in both relational (MySQL, PostgreSQL) and non-relational databases (MongoDB). State management using Redux, data fetching with React Query. Familiar with testing tools (Jest, Cypress) and version control (Git).{" "}
+            </div>
+            {/* JOB DATE */}
+            <div className="p-3 text-red-400 text-sm font-semibold">
+              2023{" "}
+            </div>
+            {/* JOB COMPANY */}
+            <div className="p-1 rounded bg-white text-sm font-semibold w-fit">
+              Software University - Sofia
+            </div>
+          </motion.div>
+          {/* BREAKER */}
+          <div className="w-2/3 self-center h-1 bg-black relative">
+            <div className="absolute left-[50%] top-[50%] w-5 h-5 rounded-full bg-white border-red-400 border-4" style={{ transform: "translate(-50%,-50%)" }}></div>
+          </div>
+          {/* LIST ITEM */}
+          <div className="w-full ">
+            {/* JOB TITLE */}
+            <div className="bg-white p-3 font-semibold rounded-b-lg rounded-s-lg">
+              React JS
+            </div>
+            {/* JOB DESC */}
+            <div className="p-3 text-sm italic">
+              Developing Single Page Applications using ReactJS technology. Writing with JSX syntax, handling requests and Promises,routing, form validation,styling components using techniques like CSS Modules and Styled Components. React Hooks, Context API.Unit testing withJEST{" "}
+            </div>
+            {/* JOB DATE */}
+            <div className="p-3 text-red-400 text-sm font-semibold">
+              2021-2022{" "}
+            </div>
+            {/* JOB COMPANY */}
+            <div className="p-1 rounded bg-white text-sm font-semibold w-fit">
+              Software University - Sofia
+            </div>
+          </div>
+          {/* BREAKER */}
+          <div className="w-2/3 self-center h-1 bg-black relative">
+            <div className="absolute left-[50%] top-[50%] w-5 h-5 rounded-full bg-white border-red-400 border-4" style={{ transform: "translate(-50%,-50%)" }}></div>
+          </div>
+          {/* LIST ITEM */}
+          <div className="w-full ">
+            {/* JOB TITLE */}
+            <div className="bg-white p-3 font-semibold rounded-b-lg rounded-s-lg">
+              Javascript Back End
+            </div>
+            {/* JOB DESC */}
+            <div className="p-3 text-sm italic">
+              The development of server-side JavaScript applications on the Node.js platform, using Express.js as a framework. Server-client architecture and data-driven web applications with Node.js, Express.js, and MongoDB. Working with MongoDB-Mongoose library. Building REST APIs using Express.js and MongoDB.{" "}
+            </div>
+            {/* JOB DATE */}
+            <div className="p-3 text-red-400 text-sm font-semibold">
+              2021-2022{" "}
+            </div>
+            {/* JOB COMPANY */}
+            <div className="p-1 rounded bg-white text-sm font-semibold w-fit">
+              Software University - Sofia
+            </div>
+          </div>
+          {/* BREAKER */}
+          <div className="w-2/3 self-center h-1 bg-black relative">
+            <div className="absolute left-[50%] top-[50%] w-5 h-5 rounded-full bg-white border-red-400 border-4" style={{ transform: "translate(-50%,-50%)" }}></div>
+          </div>
+          {/* LIST ITEM */}
+          <div className="w-full ">
+            {/* JOB TITLE */}
+            <div className="bg-white p-3 font-semibold rounded-b-lg rounded-s-lg">
+              HTML and CSS
+            </div>
+            {/* JOB DESC */}
+            <div className="p-3 text-sm italic">
+              Knowledge of HTML5 and CSS3 for web development, web browsers, tools for HTML/CSS/DOM development, and practical skills in using the language for describing web content (HTML) and the language for styling web content (CSS).{" "}
+            </div>
+            {/* JOB DATE */}
+            <div className="p-3 text-red-400 text-sm font-semibold">
+              2020-2021{" "}
+            </div>
+            {/* JOB COMPANY */}
+            <div className="p-1 rounded bg-white text-sm font-semibold w-fit">
+              Software University - Sofia
+            </div>
+          </div>
+          {/* BREAKER */}
+          <div className="w-2/3 self-center h-1 bg-black relative">
+            <div className="absolute left-[50%] top-[50%] w-5 h-5 rounded-full bg-white border-red-400 border-4" style={{ transform: "translate(-50%,-50%)" }}></div>
+          </div>
+          {/* LIST ITEM */}
+          <div className="w-full ">
+            {/* JOB TITLE */}
+            <div className="bg-white p-3 font-semibold rounded-b-lg rounded-s-lg">
+              JavaScript Applications
+            </div>
+            {/* JOB DESC */}
+            <div className="p-3 text-sm italic">
+              HTTP requests, REST services, Backend as a Service (BaaS), asynchronous code (Promises, use of async/await), templating, and routing. Creating a Single Page Application.{" "}
+            </div>
+            {/* JOB DATE */}
+            <div className="p-3 text-red-400 text-sm font-semibold">
+              2020-2021{" "}
+            </div>
+            {/* JOB COMPANY */}
+            <div className="p-1 rounded bg-white text-sm font-semibold w-fit">
+              Software University - Sofia
+            </div>
+          </div>
+          {/* BREAKER */}
+          <div className="w-2/3 self-center h-1 bg-black relative">
+            <div className="absolute left-[50%] top-[50%] w-5 h-5 rounded-full bg-white border-red-400 border-4" style={{ transform: "translate(-50%,-50%)" }}></div>
+          </div>
+          {/* LIST ITEM */}
+          <div className="w-full ">
+            {/* JOB TITLE */}
+            <div className="bg-white p-3 font-semibold rounded-b-lg rounded-s-lg">
+              JavaScript Advanced
+            </div>
+            {/* JOB DESC */}
+            <div className="p-3 text-sm italic">
+              Working with the DOM tree, manipulations on it, and handling events. Functional and Object-Oriented Programming (OOP) approaches in JavaScript, inheritance, object composition, prototype chains and etc. {" "}
+            </div>
+            {/* JOB DATE */}
+            <div className="p-3 text-red-400 text-sm font-semibold">
+              2020-2021{" "}
+            </div>
+            {/* JOB COMPANY */}
+            <div className="p-1 rounded bg-white text-sm font-semibold w-fit">
+              Software University - Sofia
+            </div>
+          </div>
+          {/* BREAKER */}
+          <div className="w-2/3 self-center h-1 bg-black relative">
+            <div className="absolute left-[50%] top-[50%] w-5 h-5 rounded-full bg-white border-red-400 border-4" style={{ transform: "translate(-50%,-50%)" }}></div>
+          </div>
+          {/* LIST ITEM */}
+          <div className="w-full ">
+            {/* JOB TITLE */}
+            <div className="bg-white p-3 font-semibold rounded-b-lg rounded-s-lg">
+              C# Basics and Web Design
+            </div>
+            {/* JOB DESC */}
+            <div className="p-3 text-sm italic">
+              Starting my education in PU-Plovdiv and building basic knowledge about C#, further studiing about OOP programing.{" "}
+            </div>
+            {/* JOB DATE */}
+            <div className="p-3 text-red-400 text-sm font-semibold">
+              2019 - 2020{" "}
+            </div>
+            {/* JOB COMPANY */}
+            <div className="p-1 rounded bg-white text-sm font-semibold w-fit">
+              PU - Plovdiv
+            </div>
+          </div>
+          {/* BREAKER */}
+          <div className="w-2/3 self-center h-1 bg-black relative">
+            <div className="absolute left-[50%] top-[50%] w-5 h-5 rounded-full bg-white border-red-400 border-4" style={{ transform: "translate(-50%,-50%)" }}></div>
+          </div>
+          {/* LIST ITEM */}
+          <div className="w-full ">
+            {/* JOB TITLE */}
+            <div className="bg-white p-3 font-semibold rounded-b-lg rounded-s-lg">
+              Java Basics
+            </div>
+            {/* JOB DESC */}
+            <div className="p-3 text-sm italic">
+              Programing basics and algorythms with Java.{" "}
+            </div>
+            {/* JOB DATE */}
+            <div className="p-3 text-red-400 text-sm font-semibold">
+              2019
+            </div>
+            {/* JOB COMPANY */}
+            <div className="p-1 rounded bg-white text-sm font-semibold w-fit">
+              Software University - Sofia
+            </div>
           </div>
         </div>
         {/* SVG CONTAINER */}

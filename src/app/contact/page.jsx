@@ -1,37 +1,37 @@
 "use client";
 import { motion } from "framer-motion";
 import { useRef, useState } from "react";
-import emailjs from "@emailjs/browser";
+
 
 const ContactPage = () => {
-  const [success, setSuccess] = useState(false);
-  const [error, setError] = useState(false);
+  // const [success, setSuccess] = useState(false);
+  // const [error, setError] = useState(false);
   const text = "Say Hello";
 
-  const form = useRef();
+  // const form = useRef();
 
-  const sendEmail = (e) => {
-    e.preventDefault();
-    setError(false);
-    setSuccess(false);
+  // const sendEmail = (e) => {
+  //   e.preventDefault();
+  //   setError(false);
+  //   setSuccess(false);
 
-    emailjs
-      .sendForm(
-        process.env.NEXT_PUBLIC_SERVICE_ID,
-        process.env.NEXT_PUBLIC_TEMPLATE_ID,
-        form.current,
-        process.env.NEXT_PUBLIC_PUBLIC_KEY
-      )
-      .then(
-        () => {
-          setSuccess(true);
-          form.current.reset();
-        },
-        () => {
-          setError(true);
-        }
-      );
-  };
+  //   emailjs
+  //     .sendForm(
+  //       process.env.NEXT_PUBLIC_SERVICE_ID,
+  //       process.env.NEXT_PUBLIC_TEMPLATE_ID,
+  //       form.current,
+  //       process.env.NEXT_PUBLIC_PUBLIC_KEY
+  //     )
+  //     .then(
+  //       () => {
+  //         setSuccess(true);
+  //         form.current.reset();
+  //       },
+  //       () => {
+  //         setError(true);
+  //       }
+  //     );
+  // };
 
   return (
     <motion.div
@@ -47,11 +47,11 @@ const ContactPage = () => {
             {text.split("").map((letter, index) => (
               <motion.span
                 key={index}
-                initial={{ opacity: 1 }}
-                animate={{ opacity: 0 }}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
                 transition={{
                   duration: 3,
-                  repeat: Infinity,
+                  repeat: false,
                   delay: index * 0.1,
                 }}
               >
@@ -63,11 +63,12 @@ const ContactPage = () => {
         </div>
         {/* FORM CONTAINER */}
         <form
-          onSubmit={sendEmail}
-          ref={form}
+          action="https://api.web3forms.com/submit"
+          method="POST"
           className="h-1/2 lg:h-full lg:w-1/2 bg-red-50 rounded-xl text-xl flex flex-col gap-8 justify-center p-24"
         >
-          <span>Dear Lama Dev,</span>
+          <span>Dear Altes,</span>
+          <input type="hidden" name="access_key" value="20175330-693b-475f-9405-7959c12a5f30"></input>
           <textarea
             rows={6}
             className="bg-transparent border-b-2 border-b-black outline-none resize-none"
@@ -83,7 +84,7 @@ const ContactPage = () => {
           <button className="bg-purple-200 rounded font-semibold text-gray-600 p-4">
             Send
           </button>
-          {success && (
+          {/* {success && (
             <span className="text-green-600 font-semibold">
               Your message has been sent successfully!
             </span>
@@ -92,7 +93,7 @@ const ContactPage = () => {
             <span className="text-red-600 font-semibold">
               Something went wrong!
             </span>
-          )}
+          )} */}
         </form>
       </div>
     </motion.div>

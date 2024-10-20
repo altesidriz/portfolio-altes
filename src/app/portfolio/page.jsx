@@ -10,7 +10,7 @@ const items = [
     id: 1,
     color: "from-orange-50 to-orange-200",
     title: "React Commerce",
-    img: "https://images.pexels.com/photos/18073372/pexels-photo-18073372/free-photo-of-young-man-sitting-in-a-car-on-a-night-street.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load",
+    img: "/bookingScreen.png",
     desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores ab id ad nesciunt quo aut corporis modi? Voluptate, quos sunt dolorum facilis, id eum sequi placeat accusantium saepe eos laborum.",
   },
   {
@@ -39,25 +39,46 @@ const items = [
 const Single = ({ item }) => {
 
   return (
-    <div className={`relative flex flex-col lg:flex-row w-[100vw] h-[85vh] bg-gradient-to-b ${item.color}`}>
-      <div className="h-1/3 lg:h-full w-full flex items-center justify-center">
-        <div className="relative w-80 h-56 md:h-56 lg:h-[300px] lg:w-[80%] xl:h-[50%]">
-          <Image src={item.img} alt="" fill />
+    <motion.div
+      className="h-full"
+      initial={{ y: "-200vh" }}
+      animate={{ y: "0%" }}
+      transition={{ duration: 1 }}
+    >
+      <div className={`relative pt-3 flex flex-col lg:flex-row w-[100vw] h-[85vh] bg-gradient-to-b ${item.color}`}>
+        <div className="h-[40%] lg:h-full w-full flex items-center justify-center">
+          <div className="relative w-80 h-56 overflow-y-auto lg:hidden">
+            <Image src={item.img} alt="" width={700} height={700} style={{
+              width: '100%',
+              height: 'auto',
+            }} />
+          </div>
+          <div className="hidden lg:flex relative lg:w-[400px] lg:h-[400px] xl:w-[600px] xl:h-[600px]">
+            <Image src="/monitor.png" fill className="" />
+            <div className="absolute lg:h-[220px] lg:w-[365px] xl:h-[330px] xl:w-[550px] lg:top-[20px] lg:left-[18px] xl:top-[30px] xl:left-[25px] overflow-y-auto">
+              <div className="relative h-full w-full">
+                <Image src={item.img} alt="" width={700} height={700} style={{
+                  width: '100%',
+                  height: 'auto',
+                }} />
+              </div>
+            </div>
+          </div>
         </div>
+        <div className="h-2/3 lg:h-full w-full flex-col content-center">
+          <h1 className="text-4xl h-[15%] font-bold text-center md:text-4xl lg:text-6xl xl:text-7xl">
+            {item.title}
+          </h1>
+          <p className="w-full h-[40%] text-center px-8 md:w96 lg:w-full lg:text-lg xl:w-full">
+            {item.desc}
+          </p>
+          <Link href="#" className="flex h-[70px] md:h-[100px] align-middle justify-center">
+            <button className="p-2 text-sm md:p-4 md:text-md lg:p-4 lg:text-lg bg-white text-gray-600 font-semibold m-4 rounded">Visit Site</button>
+          </Link>
+        </div>
+        <div className="absolute bottom-0 left-[50%] translate-x-[-50%] h-1 w-[80%] bg-orange-400 z-5"></div>
       </div>
-      <div className="h-2/3 lg:h-full w-full flex-col content-center">
-        <h1 className="text-4xl h-[30%] font-bold text-center md:text-4xl lg:text-6xl xl:text-7xl">
-          {item.title}
-        </h1>
-        <p className="w-full h-[30%] text-center px-28 md:w96 lg:w-full lg:text-lg xl:w-full">
-          {item.desc}
-        </p>
-        <Link href="#" className="flex h-[70px] md:h-[100px] align-middle justify-center">
-          <button className="p-2 text-sm md:p-4 md:text-md lg:p-4 lg:text-lg bg-white text-gray-600 font-semibold m-4 rounded">Visit Site</button>
-        </Link>
-      </div>
-        <div className="absolute bottom-0 left-[50%] translate-x-[-50%] h-2 w-[80%] bg-orange-400 z-5"></div>
-    </div>
+    </motion.div>
   );
 };
 
@@ -75,15 +96,22 @@ const PortfolioPage = () => {
   });
 
   return (
-    <div className="relative" ref={ref}>
-      <div className="sticky z-10 top-0 left-0 pt-[10px] text-center text-black text-7xl bg-orange-50">
-        <h1>My Works</h1>
-        <motion.div style={{ scaleX }} className="h-3 bg-black"></motion.div>
+    <motion.div
+      className="h-full"
+      initial={{ y: "-200vh" }}
+      animate={{ y: "0%" }}
+      transition={{ duration: 1 }}
+    >
+      <div className="relative" ref={ref}>
+        <div className="sticky z-10 top-0 left-0 pt-[10px] text-center text-black text-7xl bg-orange-50">
+          <h1>My Works</h1>
+          <motion.div style={{ scaleX }} className="h-3 bg-black"></motion.div>
+        </div>
+        {items.map((item) => (
+          <Single item={item} key={item.id} />
+        ))}
       </div>
-      {items.map((item) => (
-        <Single item={item} key={item.id} />
-      ))}
-    </div>
+    </motion.div>
   );
 };
 
