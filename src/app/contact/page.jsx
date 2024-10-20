@@ -8,6 +8,8 @@ const ContactPage = () => {
   // const [error, setError] = useState(false);
   const text = "Say Hello";
 
+  let key = process.env.NEXT_PUBLIC_SERVICE_ID;
+
   // const form = useRef();
 
   // const sendEmail = (e) => {
@@ -68,7 +70,7 @@ const ContactPage = () => {
           className="h-1/2 lg:h-full lg:w-1/2 bg-red-50 rounded-xl text-xl flex flex-col gap-8 justify-center p-24"
         >
           <span>Dear Altes,</span>
-          <input type="hidden" name="access_key" value="20175330-693b-475f-9405-7959c12a5f30"></input>
+          <input type="hidden" name="access_key" value={key}></input>
           <textarea
             rows={6}
             className="bg-transparent border-b-2 border-b-black outline-none resize-none"
