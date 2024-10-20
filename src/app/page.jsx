@@ -12,13 +12,13 @@ const Homepage = () => {
       animate={{ y: "0%" }}
       transition={{ duration: 1 }}
     >
-      <div className="h-full flex flex-col lg:flex-row lg:gap-32 lg:items-center px-4 sm:px-8 md:px-12 lg:px-20 xl:px-40">
+      <div className="h-full flex flex-col justify-around lg:flex-row lg:gap-32 lg:items-center px-4 sm:px-8 md:px-12 lg:px-20 xl:px-40">
         {/* IMAGE CONTAINER */}
-        <div className="h-[40%] lg:h-[500px] lg:w-[500px] overflow-hidden rounded-full border-4 border-yellow-600 relative">
+        <div className="h-[200px] w-[200px] self-center lg:h-[500px] lg:w-[500px] overflow-hidden rounded-full border-4 border-orange-400 relative">
           <Image src="/Subject.png" alt="" fill className="object-contain" />
         </div>
         {/* TEXT CONTAINER */}
-        <div className="h-1/2 lg:h-full lg:w-1/2 flex flex-col gap-8 items-center justify-center">
+        <div className="h-[60%] lg:h-full lg:w-1/2 flex flex-col gap-8 items-center justify-center">
           {/* TITLE */}
           <h1 className="text-3xl md:text-6xl font-bold">
             Full Stack Java<span className="text-yellow-500">script</span> Developer
@@ -31,19 +31,19 @@ const Homepage = () => {
             I hope my work gives you a glimpse into my capabilities, and I look forward to the opportunity to collaborate on future projects!
           </p>
           {/* BUTTONS */}
-          <div className="w-full flex gap-4">
-            <button className="w-1/4 p-4 rounded-lg ring-1 ring-black bg-black text-white">
-              <Link href='/portfolio'>
+          <div className="justify-between h-[10%] text-xs lg:text-xl w-full  flex gap-4">
+            <button className="w-1/4 h-full rounded-lg ring-1 ring-black bg-black text-white">
+              <Link href='/portfolio' className="hover:text-orange-400">
                 View My Work
               </Link>
             </button>
-            <button className="w-1/4 p-4 rounded-lg ring-1 ring-black">
-              <Link href='/contact'>
+            <button className="w-1/4 rounded-lg ring-1 ring-black">
+              <Link href='/contact' className="hover:text-orange-400">
                 Contact Me
               </Link>
             </button>
-            <button className="w-1/4 p-4 rounded-lg ring-1 ring-black bg-black text-white">
-              <Link href='/pdfs/Resume.pdf'>
+            <button className="w-1/4 rounded-lg ring-1 ring-black bg-black text-white">
+              <Link href='/pdfs/Resume.pdf' className="hover:text-orange-400">
                 Check my CV
               </Link>
             </button>
