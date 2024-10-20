@@ -1,12 +1,12 @@
 "use client";
-import { motion, useInView, useScroll } from "framer-motion";
+import { motion, useInView} from "framer-motion";
 import Image from "next/image";
 import { useRef } from "react";
 
 const AboutPage = () => {
   const containerRef = useRef();
 
-  const { scrollYProgress } = useScroll({ container: containerRef });
+  // const { scrollYProgress } = useScroll({ container: containerRef });
 
   const skillRef = useRef();
   // const isSkillRefInView = useInView(skillRef, {once:true});
@@ -40,7 +40,7 @@ const AboutPage = () => {
             <h1 className="font-bold text-2xl">BIOGRAPHY</h1>
             {/* BIOGRAPHY DESC */}
             <p className="text-lg">
-              I was born in Bulgaria and began my academic journey at UACEG University in Sofia, where I studied civil engineering from 2008 to 2015. In 2019, I decided to pivot towards the tech world and started studying coding at PU-Plovdiv. However, I took a break from my studies there to focus on mastering JavaScript more quickly at SoftUni Sofia, where I graduated as a full-stack developer with skills in JavaScript, React, MongoDB, and Node.js. I’m still continuing my education at PU-Plovdiv
+              I was born in Bulgaria and began my academic journey at UACEG University in Sofia, where I studied civil engineering from 2008 to 2015. In 2019, I decided to pivot towards the tech world and started studying coding at PU-Plovdiv. However, I took a break from my studies there to focus on mastering JavaScript more quickly at SoftUni Sofia, where I graduated as a full-stack developer with skills in JavaScript, React, MongoDB, and Node.js.
             </p>
             {/* BIOGRAPHY QUOTE */}
             <span className="italic">
@@ -235,7 +235,7 @@ const AboutPage = () => {
                   </div>
                   {/* JOB DESC */}
                   <div className="p-3 text-sm italic">
-                    Experienced in building dynamic web applications with React and Next.js on the frontend. Backend expertise in Node.js and Express, with a focus on creating scalable APIs. Proficient in both relational (MySQL, PostgreSQL) and non-relational databases (MongoDB). State management using Redux, data fetching with React Query. Familiar with testing tools (Jest, Cypress) and version control (Git).{" "}
+                    Experienced in building dynamic web applications with React and Next.js on the frontend. Backend expertise in Node.js and Express, with a focus on creating scalable APIs. Proficient in both relational MySQL, PostgreSQL and non-relational databases MongoDB. State management using Redux, data fetching with React Query. Familiar with testing tools Jest, Cypress and version control Git.{" "}
                   </div>
                   {/* JOB DATE */}
                   <div className="p-3 text-red-400 text-sm font-semibold">
@@ -363,7 +363,7 @@ const AboutPage = () => {
                   </div>
                   {/* JOB DESC */}
                   <div className="p-3 text-sm italic">
-                    HTTP requests, REST services, Backend as a Service (BaaS), asynchronous code (Promises, use of async/await), templating, and routing. Creating a Single Page Application.{" "}
+                    HTTP requests, REST services, Backend as a Service &lsquo;BaaS&rsquo;, asynchronous code &lsquo;Promises, use of async/await&rsquo;, templating, and routing. Creating a Single Page Application.{" "}
                   </div>
                   {/* JOB DATE */}
                   <div className="p-3 text-red-400 text-sm font-semibold">
@@ -405,7 +405,7 @@ const AboutPage = () => {
                   </div>
                   {/* JOB DESC */}
                   <div className="p-3 text-sm italic">
-                    Working with the DOM tree, manipulations on it, and handling events. Functional and Object-Oriented Programming (OOP) approaches in JavaScript, inheritance, object composition, prototype chains and etc.{" "}
+                    Working with the DOM tree, manipulations on it, and handling events. Functional and Object-Oriented Programming OOP approaches in JavaScript, inheritance, object composition, prototype chains and etc.{" "}
                   </div>
                   {/* JOB DATE */}
                   <div className="p-3 text-red-400 text-sm font-semibold">
@@ -507,7 +507,7 @@ const AboutPage = () => {
             </div>
             {/* JOB DESC */}
             <div className="p-3 text-sm italic">
-              Experienced in building dynamic web applications with React and Next.js on the frontend. Backend expertise in Node.js and Express, with a focus on creating scalable APIs. Proficient in both relational (MySQL, PostgreSQL) and non-relational databases (MongoDB). State management using Redux, data fetching with React Query. Familiar with testing tools (Jest, Cypress) and version control (Git).{" "}
+              Experienced in building dynamic web applications with React and Next.js on the frontend. Backend expertise in Node.js and Express, with a focus on creating scalable APIs. Proficient in both relational MySQL, PostgreSQL and non-relational databases MongoDB. State management using Redux, data fetching with React Query. Familiar with testing tools Jest, Cypress and version control Git.{" "}
             </div>
             {/* JOB DATE */}
             <div className="p-3 text-red-400 text-sm font-semibold">
@@ -576,7 +576,7 @@ const AboutPage = () => {
             </div>
             {/* JOB DESC */}
             <div className="p-3 text-sm italic">
-              Knowledge of HTML5 and CSS3 for web development, web browsers, tools for HTML/CSS/DOM development, and practical skills in using the language for describing web content (HTML) and the language for styling web content (CSS).{" "}
+              Knowledge of HTML5 and CSS3 for web development, web browsers, tools for HTML/CSS/DOM development, and practical skills in using the language for describing web content HTML and the language for styling web content CSS.{" "}
             </div>
             {/* JOB DATE */}
             <div className="p-3 text-red-400 text-sm font-semibold">
@@ -599,7 +599,7 @@ const AboutPage = () => {
             </div>
             {/* JOB DESC */}
             <div className="p-3 text-sm italic">
-              HTTP requests, REST services, Backend as a Service (BaaS), asynchronous code (Promises, use of async/await), templating, and routing. Creating a Single Page Application.{" "}
+              HTTP requests, REST services, Backend as a Service-BaaS, asynchronous code Promises, use of async/await, templating, and routing. Creating a Single Page Application.{" "}
             </div>
             {/* JOB DATE */}
             <div className="p-3 text-red-400 text-sm font-semibold">
@@ -622,7 +622,7 @@ const AboutPage = () => {
             </div>
             {/* JOB DESC */}
             <div className="p-3 text-sm italic">
-              Working with the DOM tree, manipulations on it, and handling events. Functional and Object-Oriented Programming (OOP) approaches in JavaScript, inheritance, object composition, prototype chains and etc. {" "}
+              Working with the DOM tree, manipulations on it, and handling events. Functional and Object-Oriented Programming OOP approaches in JavaScript, inheritance, object composition, prototype chains and etc. {" "}
             </div>
             {/* JOB DATE */}
             <div className="p-3 text-red-400 text-sm font-semibold">
